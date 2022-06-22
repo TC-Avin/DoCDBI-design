@@ -83,7 +83,7 @@ const CompanyTable = (props) => {
               <TableCell align="center"  className="p-2">{row.Date}</TableCell>
               <TableCell align="center"  className="p-2 d-flex justify-content-center">{<FlageButton color={""} title={SubscriptionType}/>}</TableCell>
               <TableCell align="center"  className="p-2">{row.UserID}</TableCell>
-              <TableCell align="center"  className="p-2 d-flex justify-content-center">{<FlageButton color={row.status=="active"?"green":"red"} title={"Active"}/>}</TableCell>
+              <TableCell align="center"  className="p-2 d-flex justify-content-center">{<FlageButton color={row.Status=="active"?"green":"red"} title={"Active"}/>}</TableCell>
               <TableCell align="center"  className="p-2"><EditIcon className='pointer'onClick={ ()=>{openModel(row)}}/>
               <Tippy
                 content={

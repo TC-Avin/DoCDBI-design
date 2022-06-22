@@ -13,12 +13,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import PopUpModel from "./PopUpModel";
 import { Card } from "react-bootstrap";
-import Divider from "@mui/material/Divider";
 import Checkbox from "@mui/material/Checkbox";
 import img from "../../assests/image/Login.png";
 import { AuthContext } from "../Context/AuthContext";
 import { FILTER_CONTACTS, GET_ALL_CONTACTS } from "../Context/Types";
-import { CircularProgress } from "@mui/material";
 import { Button } from "@mui/material";
 
 
@@ -212,8 +210,6 @@ const DataTable = (props) => {
       handleClose()
       // setToggle(!toggle)
       setsortTogle(!sortTogle)
-
-
     }
 
 
