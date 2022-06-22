@@ -1,0 +1,71 @@
+{
+  "subscription": [
+    {
+      "month": 74,
+      "credit_annualy": 4500,
+      "annualy": 650,
+      "additional_Credits": 0.7,
+      "features": [
+        "Single User Account",
+        "Data Enrichment",
+        "Company News Alert",
+        "Advanced Search Filter",
+        "Single User Account",
+        "Suppression List Uploads",
+        "Technologies",
+        "Enrichment Technologie"
+      ]
+    },
+
+    {
+      "month": 70,
+      "credit_annualy": 4700,
+      "annualy": 600,
+      "additional_Credits": 0.6,
+      "features": [
+        "Data Enrichment",
+        "Single User Account",
+        "Advanced Search Filter",
+        "Enrichment Technologie",
+        "Company News Alert",
+        "Single User Account",
+        "Suppression List Uploads",
+        "Technologies"
+      ]
+    },
+
+    {
+      "month": 60,
+      "credit_annualy": 5000,
+      "annualy": 550,
+      "additional_Credits": 0.5,
+      "features": [
+        "Advanced Search Filter",
+        "Single User Account",
+        "Enrichment Technologie",
+        "Single User Account",
+        "Data Enrichment",
+        "Suppression List Uploads",
+        "Technologies",
+        "Enrichment Technologie"
+      ]
+    },
+
+    {
+      "month": 50,
+      "credit_annualy": 5500,
+      "annualy": 500,
+      "additional_Credits": 0.4,
+      "features": [
+        "Suppression List Uploads",
+        "Enrichment Technologie",
+        "Data Enrichment",
+        "Technologies",
+        "Single User Account",
+        "Advanced Search Filter",
+        "Enrichment Technologie",
+        "Single User Account"
+      ]
+    }
+  ]
+}

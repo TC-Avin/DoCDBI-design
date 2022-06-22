@@ -1,0 +1,10 @@
+export const LOGIN_USER = "login user";
+export const SIGNUP_USER = "signup user";
+export const RESEND_EMAIL = "resend email";
+export const FORGET_PASSWORD = "forget password";
+export const GET_ALL_CONTACTS = "get all contacts";
+export const FILTER_CONTACTS = "filter contacts";
+export const GET_ALL_TEAM_MEMBERS = "team members";
+export const INVITE_TEAM_MEMBER = "invite team member";
+export const GET_SUBSCRIPTION = "subscription";
+export const BUY_PLAN = "buy plan";

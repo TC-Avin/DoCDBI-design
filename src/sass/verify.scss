@@ -1,0 +1,141 @@
+.verify{
+    width: 70%;
+    margin: auto;
+    height: 500px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.verify-body-content1{
+    width: 50%;
+    text-align: left;
+    padding: 10px 60px;
+}
+.verify-body-content2{
+    
+}
+
+.verify-page{
+    width: 100%;
+}
+.verify-header{
+    margin: 40px 0px !important;
+    div{
+        color: #71757d;
+        font-size: 17px;
+        line-height: 22px;
+    }
+}
+.bill-pay{
+    // border: 1px solid black;
+    margin-right: 10px;
+    width: 55%;
+    height: 410px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.upload-file{
+    border: 1px dashed black;
+    width: 400px;
+    border-radius: 5px;
+    height: 410px;
+}
+.calculate-cost{
+    // border-right: 1px solid black;
+    width: 45%;
+}
+.verify-table{
+    width: inherit;
+    height: -webkit-fill-available ;
+    border-left: 1px solid whitesmoke;
+    padding: 20px;
+    hr{
+        width: 85%;
+    }
+}
+.plan-table-top{
+    text-align: left;
+}
+.plan-table-bottom{
+    width: 85% !important;
+}
+.menu-table{
+    width: 100%;
+    tr{
+        font-size: 19px;
+        // margin-bottom: 20px;
+        th{
+            padding: 6px 0px;
+        }
+    }
+}
+.menu-table-head{
+    font-size: 18px;
+    color: gray;
+}
+.upload-file{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span{
+        color: #5bc3b4;
+    }
+}
+.icon{
+    width: 56px !important;
+    height: 54px !important;
+    svg{
+        width: 55px;
+        height: 55px;
+        color: rgb(61, 78, 94) !important;
+    }
+}
+.contact-us{
+    color: #1976d2;
+    font-size: 20px;
+    font-weight: 600;
+}
+.chose-file{
+    cursor: pointer;
+    min-width: 64px;
+    padding: 11px 16px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #1976d2;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+}
+.chose-file:hover{
+    background-color:#1976d2bf
+}
+
+#input-number{
+    padding-top: 12px !important;
+}
+.Congrate-img{
+    width: 400px;
+    height: 350px;
+}
+.Congrate-font{
+    font-size: 30px;
+    font-weight: 700;
+}
+.Congrate-title{
+    font-size:  25px;;
+    font-weight: 500;
+}
+.congrate-text{
+    font-weight: 700;
+}
+.congrate-box{
+    border-radius: 20px !important;
+    margin: 173px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 30px;
+   box-shadow:  0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)
+}
