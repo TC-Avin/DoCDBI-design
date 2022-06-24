@@ -16,16 +16,13 @@ const options = [
   ]
 
 
-const AddPackage = () => {
+const AddPackage = (props) => {
 
     const Input = styled('input')({
         display: 'none',
       });
   return (
         <div>
-            <div className='transection-pegination'> 
-                <h4 class="p-2 profile-header">Add Package</h4>
-            </div>
             <div className='m-2 d-flex justify-content-center'>
             <h5 className='Upload-img mx-2'>Upload Image</h5>
                 <label htmlFor="icon-button-file">

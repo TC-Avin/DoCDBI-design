@@ -24,6 +24,8 @@
         background: none !important;
     }
 }
+
+
 .hover-dropdown {
     &:hover{
     background-color: #adb5bd !important;}
@@ -271,7 +273,7 @@ display: flex;
     font-weight: 600;
 }
 .AddCompany{
-    width: 700px !important;
+    width: 800px !important;
 }
 
 .w-35{
@@ -369,4 +371,13 @@ display: flex;
 }
 .billing-font{
     font-weight: 700;
+}
+.Btn-style{
+    display: flex !important;
+    justify-content: right !important;
+    margin: 10px !important;
+    margin-right: 20px !important;
+}
+.text{
+    text-align: center;
 }

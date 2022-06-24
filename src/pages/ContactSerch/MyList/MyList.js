@@ -21,9 +21,8 @@ const MyList = () => {
   return (
       <div className='mt-3'>
           <div className='d-flex justify-content-end  pb-0 pt-0  hadbar-btn table-wrapper'>
-              <Button variant={`${titlebtn=="" ?"contained":"outlined"}`} className='mx-0 button-highlight ' onClick={()=>{settitlebtn("")}}>List</Button>
-              <Button  variant= {`${titlebtn=="download" ?"contained":"outlined"}`} className='mx-0 flex-1 button-highlight' onClick={()=>{settitlebtn("download")}}>Downloads</Button>
-              <Button  variant= {`${titlebtn=="csvs" ?"contained":"outlined"}`} className='mx-0 flex-1 button-highlight' onClick={()=>{settitlebtn("csvs")}}>CSVs</Button>
+              <Button variant={`${titlebtn=="" ?"contained":"outlined"}`} className='mx-0 button-highlight ' onClick={()=>{settitlebtn("")}}>Downloads</Button>
+              <Button  variant= {`${titlebtn=="csvs" ?"contained":"outlined"}`} className='mx-0 flex-1 button-highlight' onClick={()=>{settitlebtn("csvs")}}>Uploaded CSVs  </Button>
               <Button  variant= {`${titlebtn=="savesearch" ?"contained":"outlined"}`} className='mx-0 flex-1 button-highlight' onClick={()=>{settitlebtn("savesearch")}}>Save Search</Button>
               {/* <Button  variant= {`${titlebtn=="unlocks" ?"contained":"outlined"}`} className='mx-0 flex-1 button-highlight' onClick={()=>{settitlebtn("unlocks")}}>Unlocks</Button> */}
           </div>

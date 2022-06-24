@@ -30,7 +30,7 @@ const AddPopUpModel = (props) => {
         <div className=" mb-3">
              {/* <p>{props.title}</p> */}
                 <div>
-                <Select options={options} className="basic-multi-select"/>
+                {/* <Select options={options} className="basic-multi-select"/> */}
                 <TextField id="outlined-basic" size="small" className="user-input-fild w-100 mt-4" label="Name"  variant="outlined"/>
                 </div>
         </div>

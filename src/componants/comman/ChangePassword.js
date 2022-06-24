@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 const ChangePassword = () => {
   const [userdetail, setuserdetails] = useState({
     ConfirmPassword: "123456",
-    Password: "123456",
+    NewPassword: "123456",
 });
 const[checkeditprofile, setcheckeditprofile] = useState(true);
 const Editprofile = (e) => {
@@ -15,25 +15,27 @@ const Editprofile = (e) => {
   checkeditprofile &&  setuserdetails({...Obj});
 }
   return (
-    <div>
-    <div>
+    < >
+      <div>
         <h4 className='p-2 profile-header '>Change Password</h4>
       </div>
-    <div className='d-flex flex-column justify-content-between user-password'>
-      
-      <div className="user-input my-5">
+      <div className='d-flex flex-column justify-content-between user-password'>
+        <div>      
+          <TextField id="outlined-basic"  size="small" className="user-input-fild" name="current Password" label="current Password" variant="outlined" />  
+        </div>
         
-        <TextField id="outlined-basic" value={userdetail.Password} size="small" className="user-input-fild" name="Password" label="Password" variant="outlined" onChange={Editprofile}/>
-
-      
-        <TextField id="outlined-basic" value={userdetail.ConfirmPassword} size="small" className="user-input-fild" name="ConfirmPassword" label="Confirm Password" variant="outlined" onChange={Editprofile}/>
-        
+        <div className="user-input my-5">
+          <TextField id="outlined-basic" value={userdetail.NewPassword} size="small" className="user-input-fild" name="NewPassword" label="New Password" variant="outlined" onChange={Editprofile}/>
+        </div>
+    
+        <div>      
+          <TextField id="outlined-basic" value={userdetail.ConfirmPassword} size="small" className="user-input-fild" name="ConfirmPassword" label="Confirm Password" variant="outlined" onChange={Editprofile}/>  
+        </div>
+        <div>
+          <Button variant="contained" className='my-5 user-input-fild'>Save</Button>
+        </div>
       </div>
-      <div>
-        <Button variant="contained" className='px-5'>Save</Button>
-      </div>
-    </div>
-    </div>
+    </>
   )
 }
 

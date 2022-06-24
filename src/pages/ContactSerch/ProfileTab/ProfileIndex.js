@@ -19,6 +19,7 @@ import Company from "../Admin/Companies/Company";
 import Invoice from "../../../componants/comman/Invoice";
 import Leads from "../Admin/Companies/Leads";
 import Categories from "../Admin/Companies/Categories"
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
 const ProfileManagement = () => {
@@ -38,6 +39,7 @@ const ProfileManagement = () => {
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Add Package" }, 
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Activity Log" }, 
 
+
   ];
 
   const Admin = [
@@ -47,9 +49,9 @@ const ProfileManagement = () => {
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Categories" },
     // { icon: <PersonIcon className="ml-3 mr-2" />, title: "Transactions" },
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Leads" }, 
-    { icon: <PersonIcon className="ml-3 mr-2" />, title: "Add Package" }, 
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Activity Log" }, 
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Change Password" },
+
   ]
 
   const Companies = [
@@ -60,6 +62,7 @@ const ProfileManagement = () => {
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Team Members" },
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Activity Log" }, 
 
+
   ]
 
   const dashboard = [
@@ -69,9 +72,8 @@ const ProfileManagement = () => {
     { title: "Credit Request", component: <CreditRequestTable setsendRequest={setsendRequest}/> },
     { title: "Transactions", component: <Transactions setsendRequest={setsendRequest}/> },
     { title: "Change Password", component: <ChangePassword setsendRequest={setsendRequest}/> },
-    { title: "Add Package", component: <AddPackage setsendRequest={setsendRequest}/> },
     { title: "Activity Log", component: <ActivityLog setsendRequest={setsendRequest}/> },
-    { title: "Companies", component: <Company setsendRequest={setsendRequest} setflag={setflag}/> },
+    { title: "Companies", component: <Company setsendRequest={setsendRequest} setflag={setflag} setTitle={setTitle}/> },
     { title: "Invoice", component: <Invoice setsendRequest={setsendRequest}/> },
     { title: "Leads", component: <Leads setsendRequest={setsendRequest}/> },
     { title: "Categories", component: <Categories setsendRequest={setsendRequest}/> },
@@ -100,6 +102,8 @@ const ProfileManagement = () => {
 
       <div className="user-detail">
         <div className="user-detail-menu">
+          <div className="d-flex flex-column justify-content-between h-100"> 
+          <div>
           {(flag=="admin"?Admin:flag=="Companies"?Companies:menu).map((data,i) => {
             return (
               <p
@@ -114,17 +118,23 @@ const ProfileManagement = () => {
               </p>
             );
           })}
+          </div>
+          <div className="text w-100 text-start">
+              {(flag=="Companies"?<a className='text-primary pointer '  onClick={()=>{setflag("admin");setTitle("Companies")}}><ArrowBackIcon className="mx-2"/>Back to Dashboard</a>:"")} 
+          </div>
+          </div>
         </div>
 
         <div className="user-detail-dashboard">
-      
+
           {dashboard.map((value) => {
           
             return <>{title.toLocaleLowerCase().includes(value.title.toLocaleLowerCase()) ? value.component : ""}</>;
           })}
           <Addteam open={addTeam} close={ChangeHandle}></Addteam>
           <SendRequest open={sendRequest} close={ChangeRequest}></SendRequest>
-          <></    >
+          
+
         </div>
       </div>
     </div>

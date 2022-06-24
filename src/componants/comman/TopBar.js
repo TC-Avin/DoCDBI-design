@@ -49,8 +49,9 @@ const TopBar = (props) => {
                 variant="contained"
                 className={`header-menu top-bar-button position-relative ${role=="admin" && "bg-yellow"}`}
                 onClick={() => {
-                  role == "admin"  && setprofile(!profile)
-                   role == "user" && navigate(data.link, { replace: true });
+
+
+         navigate(data.link, { replace: true });
                 //  navigate(data.link, { replace: true });
                   }}
                   key={i}
@@ -59,12 +60,7 @@ const TopBar = (props) => {
                   <div className="mx-1">{data.icon}</div>
                   <div className="mx-1">{data.title}</div>{" "}
                 </div>
-               {profile && <div className="position-absolute drop-profile">
-                <div href="#" onClick={()=>{navigate('/leads')}}><span><PersonIcon/></span>Leads</div>
-                <div href="#"  onClick={()=>{navigate('/categories')}}><span><PersonIcon/></span>Categories</div>
-                <div href="#"  onClick={()=>{navigate('/profile',{state:'Companies'})}}><span><PersonIcon/></span>Companies</div>
-                <div href="#"  onClick={()=>{navigate('/profile',{state:'subscription', replace: true })}}><span><PersonIcon/></span>Subscriptions</div>
-              </div>} 
+             
               </Button> 
               
           

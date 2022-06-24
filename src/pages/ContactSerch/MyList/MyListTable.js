@@ -17,6 +17,7 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import DataTable from '../../../componants/comman/DataTable';
 import { yellow } from '@mui/material/colors';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Download } from '@mui/icons-material';
 
 
 function createData(ListId, ListName, Contacts, CreatedBy, UplaodDate, Action) {
@@ -117,6 +118,7 @@ export const MyListTable = () => {
               >  
               <DeleteIcon className='pointer delete-fill'/></Tippy>
               <RemoveRedEyeIcon onClick={changetable} className="eye-Icon pointer mx-2"/>
+              <Download className='pointer' />
               </TableCell>
 
               
@@ -126,7 +128,7 @@ export const MyListTable = () => {
       </Table>  
             <PopUpModel
                 open={set}
-                title={"Edit Details"}
+                title={"Add List"}
                 close={()=>{setList(false);}}
             >
               <div className=" w-100 d-flex flex-column mylist-Update">

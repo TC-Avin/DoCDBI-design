@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TextField from '@mui/material/TextField';
+import { Button } from "@mui/material";
 
 const UserDetail = (props) => {
 
@@ -21,8 +22,10 @@ const UserDetail = (props) => {
 
     return(
         <div className=" d-flex flex-column justify-content-between user-details">
-             <div> 
+             <div className="d-flex justify-content-between flex-row"> 
                 <h4 class="p-2 profile-header">User Details</h4>
+               
+
             </div>
             <div className="user-dash-header p-4 ">
                 <div>
@@ -46,6 +49,10 @@ const UserDetail = (props) => {
 
             <div className="user-dash-footer my-5 px-4">
                 <button className="user-footer-btn">Save</button>
+                <button className=" user-footer-btn  border  bg-danger">Log Out</button>
+                <div></div>
+                <div></div>
+
                 <a className="user-edit-profile text-primary pointer" onClick={()=>{props.setTitle("subscription")}}>Want to upgrade your Membership?</a>
             </div>
         </div>

@@ -1,5 +1,7 @@
 import { Button, Table } from 'antd';
 import React, { useState } from 'react';
+import PopUpModel from '../../../../componants/comman/PopUpModel';
+import TextField from '@mui/material/TextField';
 
 const List = (props) => {
     console.log('props', props)
@@ -18,6 +20,7 @@ const List = (props) => {
         </span>
       </div>
       <Table  columns={props.columns} dataSource={props.data} />
+      
     </div>
   );
  

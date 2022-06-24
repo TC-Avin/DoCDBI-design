@@ -14,8 +14,8 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { NotificationManager } from 'react-notifications';
 import AddPopUpModel from '../../../../componants/comman/AddPopUpModel';
 import PopUpModel from '../../../../componants/comman/PopUpModel';
-function createData(ListId, ListName, Contacts, CreatedBy, UplaodDate, Action) {
-    return { ListId, ListName, Contacts, CreatedBy, UplaodDate, Action};
+function createData(ListId, ListName,  CreatedBy,  Action) {
+    return { ListId, ListName,  CreatedBy,  Action};
   }
 
 const rows = [
@@ -61,9 +61,9 @@ const Categories = () => {
        
           <TableCell align="center">Category ID</TableCell>
           <TableCell align="center">Category Name</TableCell>
-          <TableCell align="center">Contacts</TableCell>    
+          {/* <TableCell align="center">Contacts</TableCell>     */}
           <TableCell align="center">CREATED BY</TableCell>    
-          <TableCell align="center">UPLOAD DATE</TableCell>    
+          {/* <TableCell align="center">UPLOAD DATE</TableCell>     */}
           <TableCell align="center">ACTION</TableCell>    
 
         </TableRow>
@@ -76,10 +76,11 @@ const Categories = () => {
           >
             <TableCell align="center" className="p-2"  >{row.ListId}</TableCell>
             <TableCell align="center" className="p-2"  >{row.ListName}</TableCell>
-            <TableCell align="center" className="p-2"  >{row.Contacts}</TableCell>
+            {/* <TableCell align="center" className="p-2"  >{row.Contacts}</TableCell> */}
             <TableCell align="center" className="p-2"  >{row.CreatedBy}</TableCell>
-            <TableCell align="center"  className="p-2">{row.UplaodDate}</TableCell>
-            <TableCell align="center"  className="p-2 icon-fill"><EditIcon  onClick={ ()=>{openModel(row)}} className='pointer edit-fill mx-2'/>
+            {/* <TableCell align="center"  className="p-2">{row.UplaodDate}</TableCell> */}
+            <TableCell align="center"  className="p-2 icon-fill">
+              <EditIcon  onClick={ ()=>{openModel(row)}} className='pointer edit-fill mx-2'/>
             <Tippy
               content={
                 <div className='TippyAction bg-light '>
@@ -98,7 +99,7 @@ const Categories = () => {
                 className='confirmation-model'
             >  
             <DeleteIcon className='pointer delete-fill'/></Tippy>
-            <RemoveRedEyeIcon onClick={changetable} className="eye-Icon pointer mx-2"/>
+            {/* <RemoveRedEyeIcon onClick={changetable} className="eye-Icon pointer mx-2"/> */}
             </TableCell>
 
             
@@ -121,7 +122,7 @@ const Categories = () => {
               <Button  variant="contained" className="m-2 p-2 mr-0" onClick={()=>{setList(false);NotificationManager.success("Data Updated")}}>Submit</Button>
             </div>
         </PopUpModel>
-        <AddPopUpModel open={model} close={()=>{setmodel(false)}} title={"Add List"} buttonname={"Add List"} />
+        <AddPopUpModel open={model} close={()=>{setmodel(false)}} title={"Add Category"} buttonname={"Add Category"} />
 
   </TableContainer>
   )

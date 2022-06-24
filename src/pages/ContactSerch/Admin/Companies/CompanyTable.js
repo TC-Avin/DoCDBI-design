@@ -50,6 +50,9 @@ const CompanyTable = (props) => {
         createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"active"),
         createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"failed" ),
         createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"active" ),
+        createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"active" ),
+        createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"active" ),
+
     ]
   return (
     <TableContainer >
@@ -98,13 +101,13 @@ const CompanyTable = (props) => {
                   interactive={ true}
                   className='confirmation-model'
               >  
-              <DeleteIcon className='pointer delete-fill'/></Tippy><RemoveRedEyeIcon onClick={()=>{props.setflag("Companies")}} className="eye-Icon pointer mx-2"/></TableCell>
+              <DeleteIcon className='pointer delete-fill'/></Tippy><RemoveRedEyeIcon onClick={()=>{props.setflag("Companies");props.setTitle("User Details")}} className="eye-Icon pointer mx-2"/></TableCell>
 
               
             </TableRow>
           ))}
         </TableBody>
-      </Table>  
+      </Table> 
       
     <PopUpModel
                 open={List}

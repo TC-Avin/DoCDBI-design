@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import List from '../MyListCompo/List';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Tippy from '@tippyjs/react';
 import { Button } from '@mui/material'
 import { NotificationManager } from 'react-notifications';
-
-
+import EditIcon from '@mui/icons-material/Edit';
+import PopUpModel from '../../../../componants/comman/PopUpModel';
+import TextField from '@mui/material/TextField';
 const CSVs = () => {
+
     const columns = [
         {
           title: 'Uploded List',
@@ -33,8 +35,8 @@ const CSVs = () => {
           name: ` ${i+1}.csv`,
           age: 32,
           address: `London, Park Lane no. ${i}`,
-          view:<div className="text-primary pointer">See Uploded</div>,
-          download: <Tippy
+          view:<div className="text-primary pointer">Download File</div>,
+          download: <div><Tippy
                       content={
                         <div className='TippyAction bg-light '>
                           <div className=' p-2 pointer'>Are you sure you want to Delete.</div>
@@ -50,13 +52,15 @@ const CSVs = () => {
             trigger='click'
             interactive={ true}
             className='confirmation-model delete-box'
-        >  
-        <DeleteIcon className='pointer'/></Tippy>,
+        >
+        <DeleteIcon className='pointer'/></Tippy>
+        </div>,
           date:`${i+1}/9/2021`
         });
       }
   return (
     <div><List data={data} columns={columns}></List></div>
+
   )
 }
 
