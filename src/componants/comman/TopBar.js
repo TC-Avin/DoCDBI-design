@@ -60,12 +60,12 @@ const TopBar = (props) => {
                   <div className="mx-1">{data.title}</div>{" "}
                 </div>
                {profile && <div className="position-absolute drop-profile">
-                <div href="#" onClick={()=>{navigate('/profile')}}><span><PersonIcon/></span>Leads</div>
-                <div href="#"  onClick={()=>{navigate('/profile')}}><span><PersonIcon/></span>Categories</div>
-                <div href="#"  onClick={()=>{navigate('/company')}}><span><PersonIcon/></span>Companies</div>
-                <div href="#"  onClick={()=>{navigate('/profile',{state:'subscription'})}}><span><PersonIcon/></span>Subscriptions</div>
+                <div href="#" onClick={()=>{navigate('/leads')}}><span><PersonIcon/></span>Leads</div>
+                <div href="#"  onClick={()=>{navigate('/categories')}}><span><PersonIcon/></span>Categories</div>
+                <div href="#"  onClick={()=>{navigate('/profile',{state:'Companies'})}}><span><PersonIcon/></span>Companies</div>
+                <div href="#"  onClick={()=>{navigate('/profile',{state:'subscription', replace: true })}}><span><PersonIcon/></span>Subscriptions</div>
               </div>} 
-              </Button>
+              </Button> 
               
           
           );

@@ -6,6 +6,9 @@ import SearchIcon from "@mui/icons-material/Search";
 const Searchbar = (props) => {
   const { handleChange } = props;
   const [value, setValue] = useState("");
+  const suggestions = ["asd","as","bb","filter"]
+
+  
   return (
     <>
       <div className="input-group search-area">
@@ -22,7 +25,16 @@ const Searchbar = (props) => {
             handleChange(e.target.value);
           }}
         />
+
       </div>
+    {  value &&  <div className="search-filter w-100 border p-2">
+      {suggestions.map((d,i)=>{
+        return (
+          <div>{d}</div>
+        )
+      })}
+      </div>}
+
     </>
   );
 };

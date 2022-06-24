@@ -283,8 +283,9 @@ const DataTable = (props) => {
                       <h6 className="contact-font-size pointer" onClick={() => { sortRow("", true, toggle) }}>Sort Z to A</h6>
                     </div>
                     <p>
-                      {!(toggle === "") && (
+                      {!(toggle === "") && (<>
                         <Searchbar handleChange={handleSearchChange} />
+                        </>
                       )}
                     </p>
                     <div>

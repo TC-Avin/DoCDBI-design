@@ -13,8 +13,10 @@ import PopUpModel from "../../../componants/comman/PopUpModel"
 import Tippy from '@tippyjs/react';
 import { NotificationManager } from 'react-notifications';
 import AddPopUpModel from '../../../componants/comman/AddPopUpModel';
-
-
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import DataTable from '../../../componants/comman/DataTable';
+import { yellow } from '@mui/material/colors';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
 function createData(ListId, ListName, Contacts, CreatedBy, UplaodDate, Action) {
@@ -41,8 +43,24 @@ const rows = [
   ];
 export const MyListTable = () => {
   const [set, setList] = useState(false);
-
   const [model, setmodel] = useState("");
+  const [state, setstate] = useState(true);
+  const [checkBoxColumn, setCheckBoxColumn] = useState(["_id", "contact_name", "title", "phone_number", "email", "address", "name", "Action"]);
+
+  const columns = [
+    { field: "_id", headerName: "ID", width: 50 },
+    { field: "contact_name", headerName: "CONTACTS", width: 130 },
+    { field: "title", headerName: "TITLE", width: 130 },
+    { field: "phone_number", headerName: "PHONE", width: 130 },
+    { field: "email", headerName: "EMAIL", width: 90 },
+    { field: "address", headerName: "LOCATION", width: 220 },
+    { field: "name", headerName: "INDUSTRY", width: 370 },
+    { field: "action", headerName: "ACTIONS", width: 150 },
+]
+
+  const changetable = () => {
+    setstate(false);
+  }
 
   const openModel = (row)=>{
     setList({ListName:row.ListName, Contacts:row.Contacts})
@@ -53,9 +71,13 @@ export const MyListTable = () => {
     setList({...Obj})
   }
   return (
+    <div>{
+      state ?
     <TableContainer >
-                    <div className='text-end m-2'><Button variant={"contained"} className='m-1 flex-1' onClick={()=>{setmodel(true)}}>Add List</Button></div>
-
+      <div >
+        {/* <div className='text-end m-2'><Button variant={"contained"} className='m-1 flex-1' onClick={()=>{setmodel(true)}}>Back</Button></div> */}
+        <div className='text-end m-2'><Button variant={"contained"} className='m-1 flex-1' onClick={()=>{setList(true)}}>Add List</Button></div>
+      </div>                 
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow className='bg-light'>
@@ -75,7 +97,7 @@ export const MyListTable = () => {
              
               <TableCell align="center" className="p-2"  >{row.ListName}</TableCell>
               <TableCell align="center"  className="p-2">{row.CreatedBy}</TableCell>
-              <TableCell align="center"  className="p-2"><EditIcon  onClick={ ()=>{openModel(row)}} className='pointer'/>
+              <TableCell align="center"  className="p-2 icon-fill"><EditIcon  onClick={ ()=>{openModel(row)}} className='pointer edit-fill mx-2'/>
               <Tippy
                 content={
                   <div className='TippyAction bg-light '>
@@ -93,7 +115,9 @@ export const MyListTable = () => {
                   interactive={ true}
                   className='confirmation-model'
               >  
-              <DeleteIcon className='pointer'/></Tippy></TableCell>
+              <DeleteIcon className='pointer delete-fill'/></Tippy>
+              <RemoveRedEyeIcon onClick={changetable} className="eye-Icon pointer mx-2"/>
+              </TableCell>
 
               
             </TableRow>
@@ -117,6 +141,16 @@ export const MyListTable = () => {
           </PopUpModel>
           <AddPopUpModel open={model} close={()=>{setmodel(false)}} title={"Add List"} buttonname={"Add List"} />
 
-    </TableContainer>
+    </TableContainer>:
+    <div>
+      <div className='w-100 d-flex justify-content-between button-margin'>
+       <div  className='m-1 justify-content-between ' onClick={()=>{
+        setstate(true)
+       }}><ArrowBackIcon className='mr-2'/>Back</div><div className='d-flex align-items-center'>Mylist/Jimmy</div>
+      </div>
+       <DataTable columns={columns} checkBoxColumn={checkBoxColumn} />
+    </div>
+    }
+    </div>
   )
 }

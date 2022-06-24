@@ -15,10 +15,12 @@ const Editprofile = (e) => {
   checkeditprofile &&  setuserdetails({...Obj});
 }
   return (
-    <div className='d-flex flex-column justify-content-between user-password'>
-      <div>
+    <div>
+    <div>
         <h4 className='p-2 profile-header '>Change Password</h4>
       </div>
+    <div className='d-flex flex-column justify-content-between user-password'>
+      
       <div className="user-input my-5">
         
         <TextField id="outlined-basic" value={userdetail.Password} size="small" className="user-input-fild" name="Password" label="Password" variant="outlined" onChange={Editprofile}/>
@@ -30,6 +32,7 @@ const Editprofile = (e) => {
       <div>
         <Button variant="contained" className='px-5'>Save</Button>
       </div>
+    </div>
     </div>
   )
 }

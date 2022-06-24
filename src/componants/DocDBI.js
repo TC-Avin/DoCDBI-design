@@ -15,13 +15,12 @@ import Congratulations from "../pages/ContactSerch/AuthModule/Congratulations";
 import ContactSearchManagement from "../pages/ContactSerch/ContactSearch/ContactSearch";
 import ProfileManagement from "../pages/ContactSerch/ProfileTab/ProfileIndex";
 import MyList from "../pages/ContactSerch/MyList/MyList";
-import SignUpPage from "../pages/ContactSerch/AuthModule/SignUpPage";
-import SignInPage from "../pages/ContactSerch/AuthModule/SignInPage.";
 import PasswordChange from "../pages/ContactSerch/AuthModule/PasswordChange";
 import VerifyEmailPage from "../pages/ContactSerch/AuthModule/VerifyEmailPage";
 import Company from "../pages/ContactSerch/Admin/Companies/Company";
 import FlageButton from "../componants/comman/FlageButton"
-
+import Categories from "../pages/ContactSerch/Admin/Companies/Categories";
+import Leads from "../pages/ContactSerch/Admin/Companies/Leads";
 
 
 
@@ -104,8 +103,11 @@ const DocDBI = () => {
             <Route path="/company" element={HeaderFilterTopBarWrapper(<Company />)} />
             <Route path="/flageButton" element={HeaderFilterTopBarWrapper(<FlageButton />)} />
 
+            <Route path="/categories" element={HeaderFilterTopBarWrapper(<Categories />)} />
 
 
+
+            <Route path="/leads" element={HeaderFilterTopBarWrapper(<Leads />)} />
 
           </Routes>
         </AuthContext>

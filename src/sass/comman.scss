@@ -37,8 +37,11 @@
 }
 .form-control {
 &:focus{
-    border-color:transparent !important;
+    border-color:#b1b7c1 !important;
     box-shadow:0 0 0 0.25rem rgb(255, 255, 255) !important;
+    // border: solid 2px;
+    box-shadow: none !important;
+    border-left: none !important;
 }}
 .focus-input{
     &:focus{
@@ -319,5 +322,51 @@ display: flex;
     }  
 }
 .button-margin{
-    margin-left: 30px !important;
+    padding-inline: 30px !important;
+}
+.eye-Icon{
+    .MuiSvgIcon-root{
+        fill: #65d055 !important;
+    }
+}
+.icon-fill{
+    .edit-fill{
+        fill: blue;
+    }
+    .delete-fill{
+        fill: red;
+    }
+    .eye-Icon{
+        fill: #37d159;
+    }
+}
+.Invoice-box{
+    border: solid 1px;
+    background-color: #fff9f9;
+    border-color: #f0f1f3;
+    border-left: 0px;
+    border-right: 0px;
+}
+.Invoice-font{
+    font-weight: 700;
+}
+.Invoice-model{
+    width: 800px !important;
+}
+.invoice-copmponent{
+    width: 40%;
+    font-size: 14px ;
+}
+.Invoice-bill{
+    border: solid 1px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+.invoice-billing{
+    width: 35%;
+    font-size: 15px ;
+}
+.billing-font{
+    font-weight: 700;
 }

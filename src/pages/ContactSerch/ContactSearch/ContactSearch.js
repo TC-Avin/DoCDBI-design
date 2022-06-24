@@ -45,7 +45,7 @@ const ContactSearchManagement = (props) => {
             { field: "email", headerName: "EMAIL", width: 90 },
             { field: "address", headerName: "LOCATION", width: 220 },
             { field: "name", headerName: "INDUSTRY", width: 370 },
-            { field: "action", headerName: "ACTIONS", width: 150 },
+            { field: "action", headerName: "ACTION", width: 150 },
         ]
         setcolumns(columnary)
     }, [])

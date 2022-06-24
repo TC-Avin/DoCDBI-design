@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import TableContainer from '@mui/material/TableContainer';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
@@ -13,15 +14,16 @@ import Tippy from '@tippyjs/react';
 import FlageButton from "../../../../componants/comman/FlageButton";
 import PopUpModel from '../../../../componants/comman/PopUpModel';
 import TextField from '@mui/material/TextField';
-import AddCompany from './AddCompany';
-import EditCompany from './EditCompany';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+
 
 
 
 const CompanyTable = (props) => {
 
+    const navigate = useNavigate();
+
     const [SubscriptionType, setsubscriptiontype] = useState("");
-    const [model, setmodel] = useState(false);
     const [List, setList] = useState(false);
 
 
@@ -48,15 +50,9 @@ const CompanyTable = (props) => {
         createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"active"),
         createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"failed" ),
         createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"active" ),
-        createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"active" ),
-        createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"failed" ),
-        createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"active" ),
-        createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1"  ,"active"),
-        createData('Yonna', "Oct 24th, 2020", "Subscription Type", "DBI-1" ,"active" ),
     ]
   return (
     <TableContainer >
-                    <div className='text-end m-2'><Button variant={"contained"} className='m-1 flex-1' onClick={()=>{setmodel(true)}}>Add Company</Button></div>
 
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -83,8 +79,8 @@ const CompanyTable = (props) => {
               <TableCell align="center"  className="p-2">{row.Date}</TableCell>
               <TableCell align="center"  className="p-2 d-flex justify-content-center">{<FlageButton color={""} title={SubscriptionType}/>}</TableCell>
               <TableCell align="center"  className="p-2">{row.UserID}</TableCell>
-              <TableCell align="center"  className="p-2 d-flex justify-content-center">{<FlageButton color={row.Status=="active"?"green":"red"} title={"Active"}/>}</TableCell>
-              <TableCell align="center"  className="p-2"><EditIcon className='pointer'onClick={ ()=>{openModel(row)}}/>
+              <TableCell align="center"  className="p-2 d-flex justify-content-center">{<FlageButton color={row.Status=="active"?"green":"red"} title={row.Status}/>}</TableCell>
+              <TableCell align="center"  className="p-2 icon-fill"><EditIcon className='pointer edit-fill mx-2'onClick={ ()=>{openModel(row)}}/>
               <Tippy
                 content={
                   <div className='TippyAction bg-light '>
@@ -102,23 +98,14 @@ const CompanyTable = (props) => {
                   interactive={ true}
                   className='confirmation-model'
               >  
-              <DeleteIcon className='pointer'/></Tippy></TableCell>
+              <DeleteIcon className='pointer delete-fill'/></Tippy><RemoveRedEyeIcon onClick={()=>{props.setflag("Companies")}} className="eye-Icon pointer mx-2"/></TableCell>
 
               
             </TableRow>
           ))}
         </TableBody>
       </Table>  
-      <PopUpModel
-                open={model}
-                title={"Add Company Details"}
-                close={()=>{setmodel(false);}}
-                bodyClass={"AddCompany"}
-            >
-              <AddCompany open={model} close={()=>{setmodel(false)}} title={"Add Company Details"} buttonname={"Submit"} />
-              
-
-    </PopUpModel>
+      
     <PopUpModel
                 open={List}
                 title={"Edit Details"}
