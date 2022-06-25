@@ -6,17 +6,13 @@ import TableRow from '@mui/material/TableRow';
 import TableBody from '@mui/material/TableBody';
 import TableHead from '@mui/material/TableHead';
 import Table from '@mui/material/Table';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@mui/material';
-import TextField from '@mui/material/TextField';
 import PopUpModel from './PopUpModel';
-import EditIcon from '@mui/icons-material/Edit';
 import FlageButton from './FlageButton';
 import Tippy from '@tippyjs/react';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import { NotificationManager } from 'react-notifications';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import InvoiceTable from './InvoiceTable';
+import UserInfoDetails from '../../pages/ContactSerch/Admin/Companies/UserInfoDetail';
 
 
 
@@ -27,6 +23,7 @@ const Invoice = (props) => {
 
     const [SubscriptionType, setsubscriptiontype] = useState("");
     const [model, setmodel] = useState(false);
+    const [ userDetail ,setUserDetail]= useState(false)
 
     useEffect(() => {
         setsubscriptiontype(props.title)
@@ -43,6 +40,11 @@ const Invoice = (props) => {
         createData('Yonna', "Team Member", "Oct 24th, 2020", "52638", "UnPaid" ),
     ]
   return (
+    <div>
+      <div className='btn-class'> 
+        <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">Invoice</div><Button variant={"contained"} className='mt-2' onClick={()=>{props.setTitle("Edit User")}}>Upload Invoice</Button></h4>
+      </div>
+    
     <TableContainer >
 
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -67,7 +69,7 @@ const Invoice = (props) => {
             >
              
               <TableCell align="center" className="p-2 ">
-                <a href='#'>{row.UserName}</a></TableCell>
+                <a href='#' onClick={()=>{setUserDetail(true)}}>{row.UserName}</a></TableCell>
               <TableCell align="center"  className="p-2">{row.BillingType}</TableCell>
               <TableCell align="center"  className="p-2">{row.Date}</TableCell>
               <TableCell align="center"  className="p-2">{row.Amt}</TableCell>
@@ -108,7 +110,16 @@ const Invoice = (props) => {
               <InvoiceTable open={model} titl={Invoice} close={()=>{setmodel(false)}} bodyClass={"Invoice-model"}/>
               
           </PopUpModel>
-    </TableContainer>  )
+          <PopUpModel
+                open={userDetail}
+                title={"User Details"}
+                close={()=>{setUserDetail(false);}}
+                bodyClass={"Invoice-model"}
+            >
+<UserInfoDetails title={true}/>              
+          </PopUpModel>
+    </TableContainer>
+    </div>  )
 }
 
 export default Invoice

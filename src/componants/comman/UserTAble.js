@@ -19,6 +19,7 @@ import { AuthContext } from "../Context/AuthContext";
 import { GET_ALL_TEAM_MEMBERS } from "../Context/Types";
 import { useContext } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
+import UserInfoDetails from '../../pages/ContactSerch/Admin/Companies/UserInfoDetail';
 
 
 
@@ -37,6 +38,8 @@ const UserTAble = (props) => {
   const { dispatch } = useContext(AuthContext);
 
   const [members, setMembers] = useState();
+
+  const [userDetail, setUserDetail] = useState(false);
 
   const getTeamMembers = () => {
     dispatch({ type: GET_ALL_TEAM_MEMBERS, upDateState: setMembers });
@@ -106,8 +109,8 @@ const UserTAble = (props) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {members ? (
-              members.map((row) => {
+            {rows ? (
+              rows.map((row) => {
                 return (
                   <TableRow
                     key={row.name}
@@ -118,17 +121,20 @@ const UserTAble = (props) => {
                       scope="row"
                       align="center"
                       className="p-2"
+                      onClick={()=>{
+                        setUserDetail(true)
+                      }}
                     >
-                      {row.name}
+                     <a href='#'> {row.name}</a>
                     </TableCell>
                     <TableCell align="center" className="p-2">
                       {row.credits}
                     </TableCell>
                     <TableCell align="center" className="p-2">
-                      {/* {row.expiration} */}
+                      {row.expiration}
                     </TableCell>
                     <TableCell align="center" className="p-2">
-                      {/* {row.creation} */}
+                      {row.creation}
                     </TableCell>
                     <TableCell align="center" className="p-2 dropdown-team ">
                       {/* {row.action} */}
@@ -140,6 +146,15 @@ const UserTAble = (props) => {
                             </div>
                             <div className=" p-2 pointer hover-dropdown">
                               Suspend
+                            </div>
+                            <div className=" p-2 pointer hover-dropdown">
+                              Block
+                            </div>
+                            <div className=" p-2 pointer hover-dropdown">
+                              Delete
+                            </div>
+                            <div className=" p-2 pointer hover-dropdown">
+                              Activate/Deactivate
                             </div>
                           </div>
                         }
@@ -164,6 +179,14 @@ const UserTAble = (props) => {
           </TableBody>
         </Table>
       </TableContainer>
+      <PopUpModel
+                open={userDetail}
+                title={"User Details"}
+                close={()=>{setUserDetail(false);}}
+                bodyClass={"Invoice-model"}
+            >
+<UserInfoDetails />              
+          </PopUpModel>
     </div>
   );
 };

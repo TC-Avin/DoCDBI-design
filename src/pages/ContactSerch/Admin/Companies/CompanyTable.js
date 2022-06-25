@@ -101,7 +101,7 @@ const CompanyTable = (props) => {
                   interactive={ true}
                   className='confirmation-model'
               >  
-              <DeleteIcon className='pointer delete-fill'/></Tippy><RemoveRedEyeIcon onClick={()=>{props.setflag("Companies");props.setTitle("User Details")}} className="eye-Icon pointer mx-2"/></TableCell>
+              <DeleteIcon className='pointer delete-fill'/></Tippy><RemoveRedEyeIcon onClick={()=>{props.setflag("Companies");props.setTitle("User info")}} className="eye-Icon pointer mx-2"/></TableCell>
 
               
             </TableRow>

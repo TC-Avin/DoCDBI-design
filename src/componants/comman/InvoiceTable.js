@@ -24,20 +24,21 @@ const InvoiceTable = (props) => {
   return (
         <div>
             <div className=" w-100 d-flex flex-column mylist-Update">
-             <div className='d-flex justify-content-between Invoice-box'>
-              <div>Invoice</div>
+             <div className='d-flex justify-content-between Invoice-box border'>
+             
               <div className='Invoice-font'>01/01/2018</div>
-               <div className='d-flex'>Status:<div className='Invoice-font'>Pending</div></div>
+               <div className='d-flex Invoice-font'>Status:<div className='Invoice-font'>&nbsp;Pending</div></div>
              </div>
+             <div className='border p-3'>
              <div className='d-flex justify-content-between mb-4'>
-                <div className='invoice-copmponent'>
+                <div className='invoice-copmponent border p-2'>
                  <div>From:</div>
                   <div className='Invoice-font'>Webz Poland</div>
                   <div>Madalinskiego 8,71-101 Szczecin, Poland </div>
                   <div>Email: info@webz.com.pl</div>
                  <div>Phone: +48 444 666 3333</div>
                </div>
-               <div className='invoice-copmponent'>
+               <div className='invoice-copmponent border p-2'>
                  <div>To:</div>
                  <div className='Invoice-font'>Bob Mart</div>
                  <div>Attn: Daniel Marek,43-190 Mikolow, Poland</div>
@@ -45,11 +46,11 @@ const InvoiceTable = (props) => {
                  <div>Phone: +48 123 456 789</div>
                </div>
              </div>
-                <TableContainer component={Paper}>
+                <TableContainer  className='border rounded-0'>
                   <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                     <TableHead>
                       <TableRow>
-                        <TableCell align="left">#</TableCell>
+                        <TableCell align="left">Id</TableCell>
                         <TableCell align="left">Item	</TableCell>
                         <TableCell align="left">Description</TableCell>
                         <TableCell align="left">Unit Cost&nbsp;(g)</TableCell>
@@ -76,7 +77,9 @@ const InvoiceTable = (props) => {
                     </TableBody>
                   </Table>
                 </TableContainer>
-                <div className='w-100 justify-content-end'>
+                <div className='border p-2  mt-3'>
+
+                <div className=' justify-content-end'>
                 <div className='d-flex justify-content-between Invoice-bill invoice-billing'>
                     <div className='mr-5 billing-font'>Subtotal</div>
                     <div className='justify-content-start'>$8.497,00</div>
@@ -93,6 +96,9 @@ const InvoiceTable = (props) => {
                     <div className='mr-5 billing-font'>Total</div>
                     <div className='billing-font'>$7.477,36</div>
                 </div>
+                </div>
+                </div>
+
                 </div>
                 
                 

@@ -346,8 +346,7 @@ display: flex;
     border: solid 1px;
     background-color: #fff9f9;
     border-color: #f0f1f3;
-    border-left: 0px;
-    border-right: 0px;
+    padding: 1%;
 }
 .Invoice-font{
     font-weight: 700;
@@ -380,4 +379,26 @@ display: flex;
 }
 .text{
     text-align: center;
+}
+.User-header{
+    width: 100%;
+    background: #1976d2;
+    color: white;
+    margin-top: 0%;
+    top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    font-size: 30px;
+}
+.User-info{
+    font-size: 18px;
+    border: solid 1px;
+    border-top: 0px;
+    border-color: #d9d2d2;
+}
+.Dropdown-btn{
+    background-color: #1976d2 !important;
+    color: white !important;
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import LeadsTable from "./LeadsTable";
 import PopUpModel from "../../../../componants/comman/PopUpModel";
-import UploadLead from "./UploadLead";
+import AddLeads from "./AddLeads"
 
 const Leads = () => {
   const [titlebtn, settitlebtn] = useState("cate1");
@@ -39,7 +39,8 @@ const Leads = () => {
       title={"Upload Leads"}
       close={()=>{setmodel(false)}}
       >
-      <UploadLead close={()=>{setmodel(false)}}/>
+        <AddLeads close={()=>{setmodel(false)}}/>
+      {/* <UploadLead close={()=>{setmodel(false)}}/> */}
       </PopUpModel>
     </div>
   );

@@ -7,7 +7,7 @@ import CreditRequestTable from "../../../componants/comman/CreditRequestTable";
 import SubscripttionTable from "../../../componants/comman/SubscripttionTable";
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { Button } from "@mui/material";
-import PopUpModel from "../../../componants/comman/PopUpModel";
+import PopUpModel from "../../../componants/comman/PopUpModel"; 
 import Addteam from "./ProfileComponants/AddTeam";
 import SendRequest from "./ProfileComponants/SendRequest";
 import Transactions from "../../../componants/comman/Transactions"
@@ -20,6 +20,8 @@ import Invoice from "../../../componants/comman/Invoice";
 import Leads from "../Admin/Companies/Leads";
 import Categories from "../Admin/Companies/Categories"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import EditUser from "../Admin/Companies/EditUser";
+import UserInfo from "../Admin/Companies/UserInfo";
 
 
 const ProfileManagement = () => {
@@ -38,8 +40,6 @@ const ProfileManagement = () => {
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Change Password" },
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Add Package" }, 
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Activity Log" }, 
-
-
   ];
 
   const Admin = [
@@ -51,34 +51,32 @@ const ProfileManagement = () => {
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Leads" }, 
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Activity Log" }, 
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Change Password" },
-
   ]
 
   const Companies = [
-    { icon: <PersonIcon className="ml-3 mr-2" />, title: "User Details" },
+    { icon: <PersonIcon className="ml-3 mr-2" />, title: "User info" },
+    { icon: <PersonIcon className="ml-3 mr-2" />, title: "Edit User" },
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Invoice" }, 
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Transactions" },
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Subscription" },
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Team Members" },
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Activity Log" }, 
-
-
   ]
 
   const dashboard = [
-    { title: "User Details", component: <UserDetail setTitle={setTitle}/> },
-    { title: "Subscription", component: flag!=="admin"?<VerifyManagement setTitle={setTitle} />:<SubscripttionTable setTitle={setTitle} />},
+    { title: "User Details", component: <UserDetail setTitle={setTitle} flag={flag}/> },
+    { title: "Subscription", component: ! ["admin","Companies"].includes(flag)?<VerifyManagement setTitle={setTitle} />:<SubscripttionTable setTitle={setTitle} />},
     { title: "Team Members", component: <UserTAble setaddTeam={setaddTeam} /> },
     { title: "Credit Request", component: <CreditRequestTable setsendRequest={setsendRequest}/> },
     { title: "Transactions", component: <Transactions setsendRequest={setsendRequest}/> },
     { title: "Change Password", component: <ChangePassword setsendRequest={setsendRequest}/> },
     { title: "Activity Log", component: <ActivityLog setsendRequest={setsendRequest}/> },
     { title: "Companies", component: <Company setsendRequest={setsendRequest} setflag={setflag} setTitle={setTitle}/> },
-    { title: "Invoice", component: <Invoice setsendRequest={setsendRequest}/> },
+    { title: "Invoice", component: <Invoice setsendRequest={setsendRequest} /> },
     { title: "Leads", component: <Leads setsendRequest={setsendRequest}/> },
     { title: "Categories", component: <Categories setsendRequest={setsendRequest}/> },
-
-    
+    { title: "Edit User", component: <EditUser setsendRequest={setsendRequest} flag={flag}/> },
+    { title: "User info", component: <UserInfo setsendRequest={setsendRequest} setTitle={setTitle}/> },   
   ];
 
   const handleClick = (title) => {
@@ -133,8 +131,6 @@ const ProfileManagement = () => {
           })}
           <Addteam open={addTeam} close={ChangeHandle}></Addteam>
           <SendRequest open={sendRequest} close={ChangeRequest}></SendRequest>
-          
-
         </div>
       </div>
     </div>
