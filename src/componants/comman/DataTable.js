@@ -18,6 +18,7 @@ import img from "../../assests/image/Login.png";
 import { AuthContext } from "../Context/AuthContext";
 import { FILTER_CONTACTS, GET_ALL_CONTACTS } from "../Context/Types";
 import { Button } from "@mui/material";
+import UpgradeNow from "./UpgradeNow";
 
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -38,7 +39,7 @@ const DataTable = (props) => {
   const [rows, setRows] = useState([])
   const [filteredRows, setfilteredRows] = useState([]);
   const [sortTogle, setsortTogle] = useState(false);
-
+   const [Upgrade,setUpgrade]=useState(false)
   useMemo(() => {
     console.log(rowsPerPage, page);
     if (allContacts?.length > 0) {
@@ -216,7 +217,11 @@ const DataTable = (props) => {
 
 
     const UnlockFilled = (_id, flag) => {
+      if(true){
+        setUpgrade(true)
+      }else{
       setLock([...lock, { _id, flag }]);
+      }
     };
 
     const getAllContacts = () => {
@@ -399,6 +404,13 @@ const DataTable = (props) => {
             </Table>
           
           </TableContainer>
+          <PopUpModel
+        open={Upgrade}
+        close={()=>{setUpgrade(false);}}
+        bodyClass={"Invoice-model"}
+      >
+        <UpgradeNow />
+      </PopUpModel>
         </Card>
       </>
     )

@@ -20,7 +20,9 @@ import { GET_ALL_TEAM_MEMBERS } from "../Context/Types";
 import { useContext } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import UserInfoDetails from '../../pages/ContactSerch/Admin/Companies/UserInfoDetail';
-
+import AsignCredit from './AsignCredit';
+import UpgradeNow from './UpgradeNow';
+// import UpgradeNow from './UpgradeNow';
 
 
 
@@ -38,6 +40,8 @@ const UserTAble = (props) => {
   const { dispatch } = useContext(AuthContext);
 
   const [members, setMembers] = useState();
+  const [model, setmodel] = useState(false);
+  const [Upgrade, setUpgrade] =useState(false);
 
   const [userDetail, setUserDetail] = useState(false);
 
@@ -140,8 +144,8 @@ const UserTAble = (props) => {
                       {/* {row.action} */}
                       <Tippy
                         content={
-                          <div className="TippyAction bg-light  ">
-                            <div className=" p-2 pointer hover-dropdown">
+                          <div className="TippyAction bg-light pointer">
+                            <div className=" p-2 pointer hover-dropdown ">
                               Edit
                             </div>
                             <div className=" p-2 pointer hover-dropdown">
@@ -153,15 +157,18 @@ const UserTAble = (props) => {
                             <div className=" p-2 pointer hover-dropdown">
                               Delete
                             </div>
-                            <div className=" p-2 pointer hover-dropdown">
+                            <div className=" p-2 pointer hover-dropdown" onClick={()=>{setUpgrade(true)}}>
                               Activate/Deactivate
+                            </div>
+                            <div className=" p-2 pointer hover-dropdown" onClick={()=>{setmodel(true)}}>
+                              Assign credits
                             </div>
                           </div>
                         }
                         placement="bottom-end"
                         arrow={false}
                         offset={[15, 1]}
-                        trigger="click"
+                        trigger="mouseenter"
                         interactive={true}
                         // hideOnClick={true}
                       >
@@ -185,8 +192,23 @@ const UserTAble = (props) => {
                 close={()=>{setUserDetail(false);}}
                 bodyClass={"Invoice-model"}
             >
-<UserInfoDetails />              
-          </PopUpModel>
+          <UserInfoDetails />              
+      </PopUpModel>
+      <PopUpModel
+        open={model}
+        title={"Assign credit"}
+        close={()=>{setmodel(false);}}
+      >
+        <AsignCredit close={()=>{setmodel(false)}} />
+      </PopUpModel>
+              
+      {/* <PopUpModel
+        open={Upgrade}
+        close={()=>{setUpgrade(false);}}
+        bodyClass={"Invoice-model"}
+      >
+        <UpgradeNow />
+      </PopUpModel> */}
     </div>
   );
 };

@@ -20,9 +20,7 @@ import Company from "../pages/ContactSerch/Admin/Companies/Company";
 import FlageButton from "../componants/comman/FlageButton"
 import Categories from "../pages/ContactSerch/Admin/Companies/Categories";
 import Leads from "../pages/ContactSerch/Admin/Companies/Leads";
-
-
-
+import DashBoard from "../pages/ContactSerch/DashBoard/DashBoard";
 const DocDBI = () => {
   return (
     <>
@@ -32,7 +30,6 @@ const DocDBI = () => {
             {/* <Route path="/" element={<LoginManagement />}/>
             <Route path="/signUp" element={<LoginMainPage />}/>
             <Route path="/email" element={<VerifyEmailPage />}/> */}
-
             {/* <Route
               path="/dashboard"
               element={
@@ -56,10 +53,9 @@ const DocDBI = () => {
             />
             {/* <Route path="/verify" element={<VerifyEmailPage />} /> */}
             <Route path="/congrats" element={<Congratulations />} />
-
             <Route
               path="/dashboard"
-              element={HeaderFilterTopBarWrapper(<UnderContruction />)}
+              element={HeaderFilterTopBarWrapper(<DashBoard />)}
             />
             <Route
               path="/home"
@@ -69,7 +65,6 @@ const DocDBI = () => {
               path="/mylist"
               element={HeaderFilterTopBarWrapper(<UnderContruction />)}
             />
-
             <Route
               path="/lookup"
               element={HeaderFilterTopBarWrapper(<UnderContruction />)}
@@ -78,13 +73,10 @@ const DocDBI = () => {
               path="/subscription"
               element={HeaderFilterTopBarWrapper(<UnderContruction />)}
             />
-
-                   
-
             <Route path="/lookup" element={HeaderFilterTopBarWrapper(<UnderContruction />)} />
             <Route
               path="/profile"
-              element={ 
+              element={
                 // <ProtectedRoutes>
                 HeaderFilterTopBarWrapper(<ProfileManagement />)
                 // </ProtectedRoutes>
@@ -95,19 +87,11 @@ const DocDBI = () => {
               element={HeaderFilterTopBarWrapper(<UnderContruction />)}
             />
             <Route path="/verify" element={<VerifyEmailPage />} />
-           
             <Route path="/forgotpassword" element={<PasswordChange />} />
-
-
             <Route path="/company" element={HeaderFilterTopBarWrapper(<Company />)} />
             <Route path="/flageButton" element={HeaderFilterTopBarWrapper(<FlageButton />)} />
-
             <Route path="/categories" element={HeaderFilterTopBarWrapper(<Categories />)} />
-
-
-
             <Route path="/leads" element={HeaderFilterTopBarWrapper(<Leads />)} />
-
           </Routes>
         </AuthContext>
         {/* <Footer /> */}
@@ -115,5 +99,4 @@ const DocDBI = () => {
     </>
   );
 };
-
 export default DocDBI;

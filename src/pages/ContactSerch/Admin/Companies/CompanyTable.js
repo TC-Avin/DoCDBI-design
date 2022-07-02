@@ -83,8 +83,9 @@ const CompanyTable = (props) => {
               <TableCell align="center"  className="p-2 d-flex justify-content-center">{<FlageButton color={""} title={SubscriptionType}/>}</TableCell>
               <TableCell align="center"  className="p-2">{row.UserID}</TableCell>
               <TableCell align="center"  className="p-2 d-flex justify-content-center">{<FlageButton color={row.Status=="active"?"green":"red"} title={row.Status}/>}</TableCell>
-              <TableCell align="center"  className="p-2 icon-fill"><EditIcon className='pointer edit-fill mx-2'onClick={ ()=>{openModel(row)}}/>
-              <Tippy
+              <TableCell align="center"  className="p-2 icon-fill">
+                {/* <EditIcon className='pointer edit-fill mx-2'onClick={ ()=>{openModel(row)}}/> */}
+              {/* <Tippy
                 content={
                   <div className='TippyAction bg-light '>
                     <div className=' p-2 pointer'>Are you sure you want to Delete.</div>
@@ -101,7 +102,11 @@ const CompanyTable = (props) => {
                   interactive={ true}
                   className='confirmation-model'
               >  
-              <DeleteIcon className='pointer delete-fill'/></Tippy><RemoveRedEyeIcon onClick={()=>{props.setflag("Companies");props.setTitle("User info")}} className="eye-Icon pointer mx-2"/></TableCell>
+              <DeleteIcon className='pointer delete-fill'/></Tippy> */}
+              <RemoveRedEyeIcon
+               onClick={()=>{props.setflag("Companies");props.setTitle("User info")}} 
+               className="eye-Icon pointer mx-2"/>
+               </TableCell>
 
               
             </TableRow>
