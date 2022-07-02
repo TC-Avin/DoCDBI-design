@@ -36,7 +36,7 @@ const DropDownButton = () => {
   return (
     <Space wrap>
         <Dropdown overlay={menu} trigger="click">
-            <Button className="Dropdown-btn">
+            <Button className="Dropdown-btn button-custom">
                 <Space>
                     Button
                     <DownOutlined className='d-flex' />

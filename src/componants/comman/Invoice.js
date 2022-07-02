@@ -42,7 +42,7 @@ const Invoice = (props) => {
   return (
     <div>
       <div className='btn-class'> 
-        <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">Invoice</div><Button variant={"contained"} className='mt-2' onClick={()=>{props.setTitle("Edit User")}}>Upload Invoice</Button></h4>
+        <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">Invoice</div></h4>
       </div>
     
     <TableContainer >

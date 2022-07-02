@@ -77,7 +77,7 @@ const UserTAble = (props) => {
           
           <Button
             variant="contained"
-            className='mt-2'
+            className='mt-2 button-custom'
             onClick={() => {
               props.setaddTeam(true);
             }}

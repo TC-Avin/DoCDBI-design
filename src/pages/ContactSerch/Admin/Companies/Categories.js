@@ -14,15 +14,15 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { NotificationManager } from 'react-notifications';
 import AddPopUpModel from '../../../../componants/comman/AddPopUpModel';
 import PopUpModel from '../../../../componants/comman/PopUpModel';
-function createData(ListId, ListName,  CreatedBy,  Action) {
-    return { ListId, ListName,  CreatedBy,  Action};
+function createData(ListId, ListName,  Date,  Action) {
+    return { ListId, ListName,  Date,  Action};
   }
 
 const rows = [
-    createData('cat-111', "Jimmy", "+1-202-256-0151", "2022/03/06", "2022/03/09" ),
-    createData('cat-112', "John", "+1-202-895-0117",  "2022/04/10", "2022/04/14" ),
-    createData('cat-113', "sam", "+1-207-855-0144",  "2022/03/17", "2022/03/18" ),
-    createData('cat-114', "lino", "+1-452-691-8442",  "2022/03/15", "2022/03/19" ),
+    createData('cat-111', "Jimmy","2022/03/06", "2022/03/09" ),
+    createData('cat-112', "John","2022/04/10", "2022/04/14" ),
+    createData('cat-113', "sam","2022/03/17", "2022/03/18" ),
+    createData('cat-114', "lino","2022/03/15", "2022/03/19" ),
 
 
   ];
@@ -51,7 +51,7 @@ const Categories = () => {
     <TableContainer >
     <div >
     <div className='btn-class'>
-        <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">Categories</div><Button variant={"contained"} className='mt-2' onClick={()=>{setmodel(true)}}>Add Category</Button></h4>
+        <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">Categories</div><Button variant={"contained"} className='mt-2 button-custom' onClick={()=>{setmodel(true)}}>Add Category</Button></h4>
     </div>
       {/* <div className='text-end m-2'><Button variant={"contained"} className='m-1 flex-1' onClick={()=>{setmodel(true)}}>Back</Button></div> */}
     </div>                 
@@ -62,7 +62,7 @@ const Categories = () => {
           <TableCell align="center">Category ID</TableCell>
           <TableCell align="center">Category Name</TableCell>
           {/* <TableCell align="center">Contacts</TableCell>     */}
-          <TableCell align="center">CREATED BY</TableCell>    
+          <TableCell align="center">Date</TableCell>    
           {/* <TableCell align="center">UPLOAD DATE</TableCell>     */}
           <TableCell align="center">ACTION</TableCell>    
 
@@ -77,7 +77,7 @@ const Categories = () => {
             <TableCell align="center" className="p-2"  >{row.ListId}</TableCell>
             <TableCell align="center" className="p-2"  >{row.ListName}</TableCell>
             {/* <TableCell align="center" className="p-2"  >{row.Contacts}</TableCell> */}
-            <TableCell align="center" className="p-2"  >{row.CreatedBy}</TableCell>
+            <TableCell align="center" className="p-2"  >{row.Date}</TableCell>
             {/* <TableCell align="center"  className="p-2">{row.UplaodDate}</TableCell> */}
             <TableCell align="center"  className="p-2 icon-fill">
               <EditIcon  onClick={ ()=>{openModel(row)}} className='pointer edit-fill mx-2'/>

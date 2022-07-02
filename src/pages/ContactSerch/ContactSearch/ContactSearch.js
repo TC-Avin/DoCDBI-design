@@ -26,7 +26,7 @@ import { NotificationManager } from 'react-notifications';
 
 
 const ContactSearchManagement = (props) => {
-    const { dispatch, setFilter, setAllContacts } = useContext(AuthContext);
+ const { dispatch, setFilter, setAllContacts } = useContext(AuthContext);
 
     const [toggle, setToggle] = useState(false);
     const [columns, setcolumns] = useState("");

@@ -8,7 +8,7 @@ import { AuthContext } from "../../../../componants/Context/AuthContext";
 import { INVITE_TEAM_MEMBER } from "../../../../componants/Context/Types";
 import { NotificationManager } from "react-notifications";
 const Addteam = (props) => {
-  const { dispatch } = useContext(AuthContext);
+  // const { dispatch } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState({
     value: false,
     message: "",
@@ -34,12 +34,12 @@ const Addteam = (props) => {
 
   const handleSubmit = (values, resetForm) => {
     console.log("submit");
-    dispatch({
-      type: INVITE_TEAM_MEMBER,
-      payload: values,
-      resetForm: resetForm,
-      setIsLoading: setIsLoading,
-    });
+    // dispatch({
+    //   type: INVITE_TEAM_MEMBER,
+    //   payload: values,
+    //   resetForm: resetForm,
+    //   setIsLoading: setIsLoading,
+    // });
   };
 
   return (

@@ -4,7 +4,6 @@ import TopBar from "./comman/TopBar";
 import Footer from "./comman/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UnderContruction from "./comman/UnderContruction";
-import MainWapper from "../helper/MainWrapper";
 import Verify from "../pages/ContactSerch/filterCompo/Verify";
 import Filter from "../pages/ContactSerch/Filter";
 import url from "../helper/config.js";
@@ -34,18 +33,18 @@ const DocDBI = () => {
             <Route path="/signUp" element={<LoginMainPage />}/>
             <Route path="/email" element={<VerifyEmailPage />}/> */}
 
-            <Route
+            {/* <Route
               path="/dashboard"
               element={
                 <ProtectedRoutes>
-                  {MainWapper(<UnderContruction />)}
+                  {HeaderFilterTopBarWrapper(<UnderContruction />)}
                 </ProtectedRoutes>
               }
-            />
-            <Route path="/home" element={MainWapper(<UnderContruction />)} />
+            /> */}
+            <Route path="/home" element={HeaderFilterTopBarWrapper(<UnderContruction />)} />
             <Route
               path="/contactsearch"
-              element={MainWapper(
+              element={HeaderFilterTopBarWrapper(
                 <ProtectedRoutes>
                   <ContactSearchManagement />
                 </ProtectedRoutes>
@@ -82,18 +81,18 @@ const DocDBI = () => {
 
                    
 
-            <Route path="/lookup" element={MainWapper(<UnderContruction />)} />
+            <Route path="/lookup" element={HeaderFilterTopBarWrapper(<UnderContruction />)} />
             <Route
               path="/profile"
               element={ 
-                <ProtectedRoutes>
-                  {MainWapper(<ProfileManagement />)}
-                </ProtectedRoutes>
+                // <ProtectedRoutes>
+                HeaderFilterTopBarWrapper(<ProfileManagement />)
+                // </ProtectedRoutes>
               }
             />
             <Route
               path="/subscription"
-              element={MainWapper(<UnderContruction />)}
+              element={HeaderFilterTopBarWrapper(<UnderContruction />)}
             />
             <Route path="/verify" element={<VerifyEmailPage />} />
            

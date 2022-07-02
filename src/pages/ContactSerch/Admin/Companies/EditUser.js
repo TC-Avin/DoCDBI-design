@@ -20,9 +20,7 @@ const EditUser = (props) => {
     }
   return (
     <div className=" d-flex flex-column justify-content-between user-details">
-             <div className="d-flex justify-content-between flex-row"> 
-                <h4 class="p-2 profile-header">Edit User</h4>
-            </div>
+            
             <div className="user-dash-header p-4 ">
                 <div>
                     <div className="user-name">John Doe</div>
@@ -46,7 +44,7 @@ const EditUser = (props) => {
             <div className="user-dash-footer my-5 px-4">
                 <button className="user-footer-btn">Save</button>
                 
-              {props.flag!=="Companies" && <button className=" user-footer-btn  border  bg-danger">Log Out</button>}
+              {/* {props.flag!=="Companies" && <button className=" user-footer-btn  border  bg-danger">Log Out</button>} */}
                 <div></div>
                 <div></div>
 

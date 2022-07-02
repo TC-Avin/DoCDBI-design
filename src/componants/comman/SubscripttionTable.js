@@ -30,7 +30,7 @@ const SubscripttionTable = (props) => {
 
   return (
     <div> <div>
-    <h4 class="pr-3  d-flex justify-content-between"><div class="p-2 profile-header">Subscription</div><Button className='mt-2' variant="contained" onClick={()=>{setmodel(true)}}>Add Package</Button></h4>
+    <h4 class="pr-3  d-flex justify-content-between"><div class="p-2 profile-header">Subscription</div><Button className='mt-2 button-custom' variant="contained" onClick={()=>{setmodel(true)}}>Add Package</Button></h4>
     
   </div>
 <TableContainer >

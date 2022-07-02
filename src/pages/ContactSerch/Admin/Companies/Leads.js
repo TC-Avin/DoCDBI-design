@@ -12,7 +12,7 @@ const Leads = () => {
   return (
     <div>
       <div className='btn-class'>
-        <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">Leads</div><Button variant={"contained"} className='mt-2' onClick={()=>{setmodel(true)}}>Upload Leads</Button></h4>
+        <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">Leads</div><Button variant={"contained"} className='mt-2 button-custom' onClick={()=>{setmodel(true)}}>Upload Leads</Button></h4>
     </div>
       <div className="d-flex justify-content-end  pb-0 pt-0">
         <div className="d-flex justify-content-end  pb-0 pt-0  hadbar-btn table-wrapper">

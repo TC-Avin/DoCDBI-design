@@ -55,7 +55,7 @@ const ProfileManagement = () => {
 
   const Companies = [
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "User info" },
-    { icon: <PersonIcon className="ml-3 mr-2" />, title: "Edit User" },
+    // { icon: <PersonIcon className="ml-3 mr-2" />, title: "Edit User" },
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Invoice" }, 
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Transactions" },
     { icon: <PersonIcon className="ml-3 mr-2" />, title: "Subscription" },

@@ -24,7 +24,7 @@ const UserDetail = (props) => {
     return(
         <div className=" d-flex flex-column justify-content-between user-details">
              <div className="btn-class"> 
-                <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">User Detail</div><DropDownButton /></h4>
+                <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header ">User Detail</div><DropDownButton /></h4>
             </div>
             <div className="user-dash-header p-4 ">
                 <div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import { useNavigate } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
@@ -19,11 +19,15 @@ import LastPageIcon from '@mui/icons-material/LastPage';
 import TableHead from '@mui/material/TableHead';
 import { Button } from '@mui/material';
 import UserInfoDetails from './UserInfoDetail';
+import PopUpModel from '../../../../componants/comman/PopUpModel';
+import EditUser from './EditUser';
+
 
 
 const UserInfo = (props) => {
 
     const navigate = useNavigate();
+    const [model, setmodel] = useState(false);
 
     function createData(User, Details) {
         return { User, Details };
@@ -41,9 +45,18 @@ const UserInfo = (props) => {
   return (
     <div className=''>
         <div className='btn-class'> 
-            <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">User Info</div><Button variant={"contained"} className='mt-2' onClick={()=>{props.setTitle("Edit User")}}>Edit User</Button></h4>
+            <h4 class="pr-3 d-flex justify-content-between"><div class="p-2 profile-header">User Info</div><Button variant={"contained"} className='mt-2 button-custom' onClick={()=>setmodel(true)}>Edit User</Button></h4>
         </div>
         <UserInfoDetails/>
+
+        <PopUpModel
+          open={model}
+          title={"Edit Detail"}
+          close={()=>{setmodel(false);}}
+          bodyClass={"AddCompany"}
+        >
+          <EditUser />
+        </PopUpModel>
 
     </div>
   )
